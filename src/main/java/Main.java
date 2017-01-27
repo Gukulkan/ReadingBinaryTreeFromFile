@@ -7,15 +7,16 @@ import java.io.InputStreamReader;
 public class Main {
 
     public static void main(String[] args) {
-        FileInputStream fis = null;
-        InputStreamReader isr =null;
+        FileInputStream fis ;
+        InputStreamReader isr;
 
         try {
 
-            fis = new FileInputStream("C:\\Users\\gekh1016\\Documents\\test.txt");
+            fis = new FileInputStream("c:\\test.txt");
             isr = new InputStreamReader(fis);
 
-            Tree.buildTree(isr);
+            System.out.println(Tree.buildTree(isr));
+
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
