@@ -1,11 +1,7 @@
 package com.gukulkan;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Tree<T> {
 
@@ -14,11 +10,11 @@ public class Tree<T> {
     public boolean insert(T name, String left, String right){
         return insert(new TreeNode<>(
                 name,
-                createNodeFromString(left),
-                createNodeFromString(right)));
+                createNode(left),
+                createNode(right)));
     }
 
-    private boolean insert(TreeNode node){
+    public boolean insert(TreeNode node){
         TreeNode toInsert = insert(root, node);
 
         if(toInsert == null)
@@ -63,7 +59,7 @@ public class Tree<T> {
         return null;
     }
 
-    private void insertAll(List<TreeNode> in){
+    public void insertAll(List<TreeNode> in){
         int inSize = in.size();
         List<TreeNode> out = new ArrayList<>();
 
@@ -80,40 +76,7 @@ public class Tree<T> {
         in.clear();
     }
 
-    public static Tree buildTree (InputStreamReader reader){
-        Tree tree = new Tree();
-        BufferedReader bufferedReader = new BufferedReader(reader);
-        String thisLine;
-
-        List<TreeNode> nodes = new ArrayList<>();
-
-        try {
-            while ((thisLine = bufferedReader.readLine()) != null) {
-                System.out.println(thisLine);
-                String[] strings = thisLine.split(",");
-                TreeNode treeNodeForAdd = new TreeNode<>(
-                        strings[0],
-                        createNodeFromString(strings[1]),
-                        createNodeFromString(strings[2]));
-                if(!nodes.stream()
-                        .filter(node -> node.value.equals(strings[0]))
-                        .collect(Collectors.toList())
-                        .isEmpty())
-                    throw new RuntimeException("File has duplicated roots");
-
-                nodes.add(treeNodeForAdd);
-            }
-        } catch (IOException | IndexOutOfBoundsException e) {
-            throw new RuntimeException("Incorrect input file");
-        }
-
-        if(nodes.size() > 0)
-            tree.insertAll(nodes);
-
-        return tree;
-    }
-
-    private static TreeNode createNodeFromString(String s){
+    public static TreeNode createNode(String s){
         return "#".equals(s)? null : new TreeNode<>(s);
     }
 

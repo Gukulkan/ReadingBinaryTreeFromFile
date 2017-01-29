@@ -1,4 +1,6 @@
+
 import com.gukulkan.Tree;
+import com.gukulkan.TreeFactory;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -39,7 +41,7 @@ public class TreeTest {
 
         InputStream is = new ByteArrayInputStream(str.getBytes());
 
-        Tree.buildTree(new InputStreamReader(is));
+        TreeFactory.buildTree(new InputStreamReader(is));
 
     }
 
@@ -55,7 +57,7 @@ public class TreeTest {
 
         InputStream is = new ByteArrayInputStream(str.getBytes());
 
-        Tree.buildTree(new InputStreamReader(is));
+        TreeFactory.buildTree(new InputStreamReader(is));
 
     }
 
@@ -72,7 +74,7 @@ public class TreeTest {
 
         InputStream is = new ByteArrayInputStream(str.getBytes());
 
-        Tree.buildTree(new InputStreamReader(is));
+        TreeFactory.buildTree(new InputStreamReader(is));
 
     }
 
