@@ -14,7 +14,7 @@ public class TreeTest {
     public ExpectedException expectedEx = ExpectedException.none();
 
     @Test
-    public void testInsertionRoot(){
+    public void testInsert(){
 
         Tree<String> tree = new Tree<>();
 
@@ -26,7 +26,7 @@ public class TreeTest {
     }
 
     @Test
-    public void testGetMethod(){
+    public void testGet(){
 
         Tree<String> tree = new Tree<>();
 

@@ -1,4 +1,4 @@
-import com.gukulkan.TreeFactory;
+import com.gukulkan.StreamTreeFactory;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -23,7 +23,7 @@ public class Main {
             fis = new FileInputStream(filePath);
             isr = new InputStreamReader(fis);
 
-            System.out.println(TreeFactory.buildTree(isr));
+            System.out.println(StreamTreeFactory.buildTree(isr));
 
 
         } catch (FileNotFoundException e) {

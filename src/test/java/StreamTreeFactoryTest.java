@@ -1,5 +1,5 @@
 
-import com.gukulkan.TreeFactory;
+import com.gukulkan.StreamTreeFactory;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -8,7 +8,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class TreeFactoryTest {
+public class StreamTreeFactoryTest {
 
     @Rule
     public ExpectedException expectedEx = ExpectedException.none();
@@ -26,7 +26,7 @@ public class TreeFactoryTest {
 
         InputStream is = new ByteArrayInputStream(str.getBytes());
 
-        TreeFactory.buildTree(new InputStreamReader(is));
+        StreamTreeFactory.buildTree(new InputStreamReader(is));
 
     }
 
@@ -42,7 +42,7 @@ public class TreeFactoryTest {
 
         InputStream is = new ByteArrayInputStream(str.getBytes());
 
-        TreeFactory.buildTree(new InputStreamReader(is));
+        StreamTreeFactory.buildTree(new InputStreamReader(is));
 
     }
 
@@ -59,7 +59,7 @@ public class TreeFactoryTest {
 
         InputStream is = new ByteArrayInputStream(str.getBytes());
 
-        TreeFactory.buildTree(new InputStreamReader(is));
+        StreamTreeFactory.buildTree(new InputStreamReader(is));
 
     }
 

@@ -10,12 +10,12 @@ public class Tree<T> {
     public boolean insert(T name, String left, String right){
         return insert(new TreeNode<>(
                 name,
-                createNode(left),
-                createNode(right)));
+                TreeNode.createNode(left),
+                TreeNode.createNode(right)));
     }
 
     public boolean insert(TreeNode node){
-        TreeNode toInsert = insert(root, node);
+        TreeNode toInsert = insertTreeNode(root, node);
 
         if(toInsert == null)
             return false;
@@ -25,7 +25,7 @@ public class Tree<T> {
         return true;
     }
 
-    private TreeNode insert(TreeNode r, TreeNode toInsert)
+    private TreeNode insertTreeNode(TreeNode r, TreeNode toInsert)
     {
         if (r == null)
             return toInsert;
@@ -50,11 +50,11 @@ public class Tree<T> {
             return r;
         }
 
-        if(r.left != null && insert(r.left, toInsert) != null){
+        if(r.left != null && insertTreeNode(r.left, toInsert) != null){
             return r;
         }
 
-        if(r.right != null && insert(r.right, toInsert) != null){
+        if(r.right != null && insertTreeNode(r.right, toInsert) != null){
             return r;
         }
 
@@ -102,11 +102,6 @@ public class Tree<T> {
         return found;
     }
 
-    //Better to create something like  createNode(T s), but we don't need it
-    public static TreeNode createNode(String s){
-        return "#".equals(s)? null : new TreeNode<>(s);
-    }
-
     //Here I wanted to show, that I used static nested classes, we can discuss about implementation
     static class TreeNode<T> {
 
@@ -126,6 +121,11 @@ public class Tree<T> {
         TreeNode(T value)
         {
             this(value, null, null);
+        }
+
+        //Better to create something like  createNode(T s), but we don't need it
+        static TreeNode createNode(String s){
+            return "#".equals(s)? null : new TreeNode<>(s);
         }
 
         @Override

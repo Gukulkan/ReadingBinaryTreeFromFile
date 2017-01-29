@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class TreeFactory {
+public class StreamTreeFactory {
 
     public static Tree buildTree (InputStreamReader reader){
         Tree<String> tree = new Tree<>();
@@ -22,8 +22,8 @@ public class TreeFactory {
                 String[] strings = thisLine.split(",");
                 Tree.TreeNode treeNodeForAdd = new Tree.TreeNode<>(
                         strings[0],
-                        Tree.createNode(strings[1]),
-                        Tree.createNode(strings[2]));
+                        Tree.TreeNode.createNode(strings[1]),
+                        Tree.TreeNode.createNode(strings[2]));
                 if(!nodes.stream()
                         .filter(node -> node.value.equals(strings[0]))
                         .collect(Collectors.toList())
