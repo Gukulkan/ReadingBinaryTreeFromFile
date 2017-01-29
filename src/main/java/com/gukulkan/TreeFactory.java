@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class TreeFactory {
 
     public static Tree buildTree (InputStreamReader reader){
-        Tree tree = new Tree();
+        Tree<String> tree = new Tree<>();
         BufferedReader bufferedReader = new BufferedReader(reader);
         String thisLine;
 
