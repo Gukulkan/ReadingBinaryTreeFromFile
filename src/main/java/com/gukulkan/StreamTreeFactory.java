@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class StreamTreeFactory {
 
-    public static Tree buildTree (InputStreamReader reader){
+    public static Tree buildTree(InputStreamReader reader) {
         Tree<String> tree = new Tree<>();
         BufferedReader bufferedReader = new BufferedReader(reader);
         String thisLine;
@@ -24,7 +24,7 @@ public class StreamTreeFactory {
                         strings[0],
                         Tree.TreeNode.createNode(strings[1]),
                         Tree.TreeNode.createNode(strings[2]));
-                if(!nodes.stream()
+                if (!nodes.stream()
                         .filter(node -> node.value.equals(strings[0]))
                         .collect(Collectors.toList())
                         .isEmpty())
@@ -36,7 +36,7 @@ public class StreamTreeFactory {
             throw new RuntimeException("Incorrect input file");
         }
 
-        if(nodes.size() > 0)
+        if (nodes.size() > 0)
             tree.insertAll(nodes);
 
         return tree;

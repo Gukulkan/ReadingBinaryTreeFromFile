@@ -9,12 +9,12 @@ public class Main {
     public static final String DEFAULT_FILE_PATH = "c:\\test.txt";
 
     public static void main(String[] args) {
-        FileInputStream fis ;
+        FileInputStream fis;
         InputStreamReader isr;
 
         String filePath = DEFAULT_FILE_PATH;
 
-        if(args != null && args.length > 0){
+        if (args != null && args.length > 0) {
             filePath = args[0];
         }
 

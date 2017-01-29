@@ -14,25 +14,25 @@ public class TreeTest {
     public ExpectedException expectedEx = ExpectedException.none();
 
     @Test
-    public void testInsert(){
+    public void testInsert() {
 
         Tree<String> tree = new Tree<>();
 
-        tree.insert("Quick","Fox","Jumps");
-        tree.insert("Brown","#","Over");
-        tree.insert("A","Quick","Brown");
+        tree.insert("Quick", "Fox", "Jumps");
+        tree.insert("Brown", "#", "Over");
+        tree.insert("A", "Quick", "Brown");
 
         assertTrue(tree.toString().contains("root=TreeNode{value=A"));
     }
 
     @Test
-    public void testGet(){
+    public void testGet() {
 
         Tree<String> tree = new Tree<>();
 
-        tree.insert("Quick","Fox","Jumps");
-        tree.insert("Brown","#","Over");
-        tree.insert("A","Quick","Brown");
+        tree.insert("Quick", "Fox", "Jumps");
+        tree.insert("Brown", "#", "Over");
+        tree.insert("A", "Quick", "Brown");
 
         assertEquals(tree.get("A"), "A");
         assertEquals(tree.get("Brown"), "Brown");
